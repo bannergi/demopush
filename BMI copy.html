@@ -1,0 +1,112 @@
+<!--PE/2019/013-SADHUSHAN-->
+<html>
+<head>
+
+	<style type="text/css">
+	
+
+	div{
+
+	    border-top: 5px solid black ;
+	     border-left: 2px solid black ;
+	      border-right: 2px solid black ;
+	       border-bottom: 2px solid black ;
+	}	
+ #heading{
+
+ 	text-align: center;
+ 	font-size: 25px;
+ 	font-weight: bold;
+
+}
+    #content{
+     text-align: center;
+
+
+
+
+
+    }
+
+
+
+
+
+
+	</style>
+	</head>
+	<body>
+<div>
+    <p id="heading">BMI Calaculator</p><br><br>
+    <p id="content">
+       What is your height(m)?<input type="text" id="height"><br>
+       <br>
+       what is your Weight(Kg)?<input type="text" id="weight"><br>
+       <br>
+  Do you suffer with Prediabetetes?<input type="text" id="yn"><br>
+       <br>
+       <a href="#" onclick="calcbmi()" >Do I need to have a medical checkup?</a>
+       <br>
+       <br>
+       Your BMI value : <input type="text" id="bmivalue"><br>
+<br>
+       <br>
+    <span id="msg"></span>
+
+       <br>
+
+       <br>
+       <input type="button" value="Update the database with my Data" onclick="popup()">
+
+
+</p>
+
+
+
+</div>
+
+
+
+
+		<script type="text/javascript">
+			
+  
+  function calcbmi(){
+
+
+  var weight=document.getElementById("weight").value;
+      var height=document.getElementById("height").value;
+     var bmi = weight / (height * height);
+      
+        document.getElementById("bmivalue").value=bmi;
+
+        if(bmi>30 && document.getElementById("yn").value=="yes"){
+           document.getElementById("msg").innerHTML="You need to have an immediate medical checkup";
+
+
+        }
+        else{
+      document.getElementById("msg").innerHTML="You do not need to have a medical checkup immediately";
+
+        }
+
+  }
+function popup(){
+
+
+x=window.confirm("This is medical data. Do you wish to continue adding your data to the database? \n If 'yes' press OK.")
+ if(x==true){
+ 	 document.getElementById("msg").innerHTML="Database updated successfully!";
+
+ }
+
+
+
+
+}
+
+
+
+		</script>
+	</body>
+	</html>
